@@ -325,7 +325,7 @@
 
 19. **Obtener el total de pagos realizados en cada año:**
 
-    ```
+    ```sql
     SELECT YEAR(paymentDate) AS year, SUM(amount) AS totalPayments
     FROM payments
     GROUP BY YEAR(paymentDate);
