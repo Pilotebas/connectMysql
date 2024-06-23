@@ -5,3 +5,9 @@ export const getCustomersByCreditLimit = async (creditLimit) => {
     const [result] = await connection.query('SELECT * FROM customers WHERE creditLimit >= 50000');
     return result;
 };
+
+// Obtener el promedio del límite de crédito de todos los clientes
+export const getAverageCreditLimit = async (connection) => {
+    const [result] = await connection.query('SELECT AVG(creditLimit) AS averageCreditLimit FROM customers');
+    return result;
+};

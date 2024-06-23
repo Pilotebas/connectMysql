@@ -5,3 +5,9 @@ export const getPaymentsByCustomer = async (customerNumber) => {
     const [result] = await connection.query('SELECT * FROM payments WHERE customerNumber = 103');
     return result;
 };
+
+// Calcular el total de pagos recibidos
+export const getTotalPayments = async (connection) => {
+    const [result] = await connection.query('SELECT SUM(amount) AS totalPayments FROM payments');
+    return result;
+};
